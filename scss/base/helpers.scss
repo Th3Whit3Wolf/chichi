@@ -1,0 +1,536 @@
+// Float
+
+.clearfix {
+  @include clearfix;
+}
+
+.pulled-left {
+  float: left !important;
+}
+
+.pulled-right {
+  float: right !important;
+}
+
+// Overflow
+
+.clipped {
+  overflow: hidden !important;
+}
+
+// Overlay
+
+.overlay {
+  @extend %overlay;
+}
+
+// Typography
+
+@mixin typography-size($target: "") {
+  @each $size in $sizes {
+    $i: index($sizes, $size);
+
+    .is-size-#{$i}#{if($target == "", "", "-" + $target)} {
+      font-size: $size !important;
+    }
+  }
+}
+
+@include typography-size;
+
+@include mobile {
+  @include typography-size("mobile");
+}
+
+
+@include tablet {
+  @include typography-size("tablet");
+}
+
+
+@include touch {
+  @include typography-size("touch");
+}
+
+
+@include desktop {
+  @include typography-size("desktop");
+}
+
+
+@include widescreen {
+  @include typography-size("widescreen");
+}
+
+
+@include fullhd {
+  @include typography-size("fullhd");
+}
+
+
+@include realhd {
+  @include typography-size("realhd");
+}
+
+
+@include qhd {
+  @include typography-size("qhd");
+}
+
+
+// c - centered, j - justified, l - left, r - right
+$alignments: ("c": "center", "j": "justify", "l": "left", "r": "right");
+
+@each $alignment, $text-align in $alignments {
+  .text-#{$alignment} {
+    text-align: #{$text-align} !important;
+  }
+}
+
+@each $alignment, $text-align in $alignments {
+  @include mobile {
+    .text-#{$alignment}-mobile {
+      text-align: #{$text-align} !important;
+    }
+  }
+
+
+  @include tablet {
+    .text-#{$alignment}-tablet {
+      text-align: #{$text-align} !important;
+    }
+  }
+
+
+  @include tablet-only {
+    .text-#{$alignment}-tablet-only {
+      text-align: #{$text-align} !important;
+    }
+  }
+
+
+  @include touch {
+    .text-#{$alignment}-touch {
+      text-align: #{$text-align} !important;
+    }
+  }
+
+
+  @include desktop {
+    .text-#{$alignment}-desktop {
+      text-align: #{$text-align} !important;
+    }
+  }
+
+
+  @include desktop-only {
+    .text-#{$alignment}-desktop-only {
+      text-align: #{$text-align} !important;
+    }
+  }
+
+
+  @include widescreen {
+    .text-#{$alignment}-widescreen {
+      text-align: #{$text-align} !important;
+    }
+  }
+
+
+  @include widescreen-only {
+    .text-#{$alignment}-widescreen-only {
+      text-align: #{$text-align} !important;
+    }
+  }
+
+
+  @include fullhd {
+    .text-#{$alignment}-fullhd {
+      text-align: #{$text-align} !important;
+    }
+  }
+
+
+  @include realhd {
+    .text-#{$alignment}-realhd {
+      text-align: #{$text-align} !important;
+    }
+  }
+
+
+  @include qhd {
+    .text-#{$alignment}-qhd {
+      text-align: #{$text-align} !important;
+    }
+  }
+}
+
+.capitalized {
+  text-transform: capitalize !important;
+}
+
+.lowercase {
+  text-transform: lowercase !important;
+}
+
+.uppercase {
+  text-transform: uppercase !important;
+}
+
+.italic {
+  font-style: italic !important;
+}
+
+@each $name, $pair in $colors {
+  $color: nth($pair, 1);
+
+  .text-#{$name} {
+    color: $color !important;
+  }
+
+  a.text-#{$name} {
+    &:hover,
+    &:focus {
+      color: bulmaDarken($color, 10%) !important;
+    }
+  }
+
+  .has-background-#{$name} {
+    background-color: $color !important;
+  }
+}
+
+@each $name, $shade in $shades {
+  .text-#{$name} {
+    color: $shade !important;
+  }
+
+  .has-background-#{$name} {
+    background-color: $shade !important;
+  }
+}
+
+.text-weight-light {
+  font-weight: $weight-light !important;
+}
+
+.text-weight-normal {
+  font-weight: $weight-normal !important;
+}
+
+.text-weight-medium {
+  font-weight: $weight-medium !important;
+}
+
+.text-weight-semibold {
+  font-weight: $weight-semibold !important;
+}
+
+.text-weight-bold {
+  font-weight: $weight-bold !important;
+}
+
+.family-primary {
+  font-family: $family-primary !important;
+}
+
+.family-secondary {
+  font-family: $family-secondary !important;
+}
+
+.family-sans-serif {
+  font-family: $family-sans-serif !important;
+}
+
+.family-monospace {
+  font-family: $family-monospace !important;
+}
+
+.family-code {
+  font-family: $family-code !important;
+}
+
+// Visibility
+
+$displays: "block" "flex" "inline" "inline-block" "inline-flex";
+
+@each $display in $displays {
+  .#{$display} {
+    display: #{$display} !important;
+  }
+
+  @include mobile {
+    .#{$display}-mobile {
+      display: #{$display} !important;
+    }
+  }
+
+
+  @include tablet {
+    .#{$display}-tablet {
+      display: #{$display} !important;
+    }
+  }
+
+
+  @include tablet-only {
+    .#{$display}-tablet-only {
+      display: #{$display} !important;
+    }
+  }
+
+
+  @include touch {
+    .#{$display}-touch {
+      display: #{$display} !important;
+    }
+  }
+
+
+  @include desktop {
+    .#{$display}-desktop {
+      display: #{$display} !important;
+    }
+  }
+
+
+  @include desktop-only {
+    .#{$display}-desktop-only {
+      display: #{$display} !important;
+    }
+  }
+
+
+  @include widescreen {
+    .#{$display}-widescreen {
+      display: #{$display} !important;
+    }
+  }
+
+
+  @include widescreen-only {
+    .#{$display}-widescreen-only {
+      display: #{$display} !important;
+    }
+  }
+
+
+  @include fullhd {
+    .#{$display}-fullhd {
+      display: #{$display} !important;
+    }
+  }
+
+
+  @include realhd {
+    .#{$display}-realhd {
+      display: #{$display} !important;
+    }
+  }
+
+
+  @include qhd {
+    .#{$display}-qhd {
+      display: #{$display} !important;
+    }
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.sr-only {
+  border: none !important;
+  clip: rect(0, 0, 0, 0) !important;
+  height: 0.01em !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 0.01em !important;
+}
+
+@include mobile {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+
+@include tablet {
+  .hidden-tablet {
+    display: none !important;
+  }
+}
+
+
+@include tablet-only {
+  .hidden-tablet-only {
+    display: none !important;
+  }
+}
+
+
+@include touch {
+  .hidden-touch {
+    display: none !important;
+  }
+}
+
+
+@include desktop {
+  .hidden-desktop {
+    display: none !important;
+  }
+}
+
+
+@include desktop-only {
+  .hidden-desktop-only {
+    display: none !important;
+  }
+}
+
+
+@include widescreen {
+  .hidden-widescreen {
+    display: none !important;
+  }
+}
+
+
+@include widescreen-only {
+  .hidden-widescreen-only {
+    display: none !important;
+  }
+}
+
+
+@include fullhd {
+  .hidden-fullhd {
+    display: none !important;
+  }
+}
+
+
+@include realhd {
+  .hidden-realhd {
+    display: none !important;
+  }
+}
+
+
+@include qhd {
+  .hidden-qhd {
+    display: none !important;
+  }
+}
+
+
+.invisible {
+  visibility: hidden !important;
+}
+
+@include mobile {
+  .invisible-mobile {
+    visibility: hidden !important;
+  }
+}
+
+
+@include tablet {
+  .invisible-tablet {
+    visibility: hidden !important;
+  }
+}
+
+
+@include tablet-only {
+  .invisible-tablet-only {
+    visibility: hidden !important;
+  }
+}
+
+
+@include touch {
+  .invisible-touch {
+    visibility: hidden !important;
+  }
+}
+
+
+@include desktop {
+  .invisible-desktop {
+    visibility: hidden !important;
+  }
+}
+
+
+@include desktop-only {
+  .invisible-desktop-only {
+    visibility: hidden !important;
+  }
+}
+
+
+@include widescreen {
+  .invisible-widescreen {
+    visibility: hidden !important;
+  }
+}
+
+
+@include widescreen-only {
+  .invisible-widescreen-only {
+    visibility: hidden !important;
+  }
+}
+
+
+@include fullhd {
+  .invisible-fullhd {
+    visibility: hidden !important;
+  }
+}
+
+
+@include realhd {
+  .invisible-realhd {
+    visibility: hidden !important;
+  }
+}
+
+
+@include qhd {
+  .invisible-qhd {
+    visibility: hidden !important;
+  }
+}
+
+
+// Other
+
+.marginless {
+  margin: 0 !important;
+}
+
+.paddingless {
+  padding: 0 !important;
+}
+
+.radiusless {
+  border-radius: 0 !important;
+}
+
+.shadowless {
+  box-shadow: none !important;
+}
+
+.unselectable {
+  @extend %unselectable;
+}
+
+.relative {
+  position: relative !important;
+}
