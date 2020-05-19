@@ -31,10 +31,7 @@ My first college english professor taught me if you want to make a story more in
 
 and more . . .
 
-Chichi is also roughly 16KB smaller
-| Bulma | Chichi |
-| :---- | -----: |
-| 192KB | 176 KB |
+Chichi is also roughly 16KB smaller minified
 
 | Framework | Normal | Minified |
 | :-------- | -----: | -------: |
