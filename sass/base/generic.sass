@@ -74,8 +74,10 @@ a
   color: $link
   cursor: pointer
   text-decoration: none
+
   strong
     color: currentColor
+
   &:hover
     color: $link-hover
 
@@ -119,6 +121,7 @@ fieldset
 
 pre
   +overflow-touch
+
   background-color: $pre-background
   color: $pre
   font-size: $pre-font-size
@@ -126,6 +129,7 @@ pre
   padding: $pre-padding
   white-space: pre
   word-wrap: normal
+
   code
     background-color: transparent
     color: currentColor
@@ -136,7 +140,9 @@ table
   td,
   th
     vertical-align: top
+
     &:not([align])
       text-align: left
+
   th
     color: $text-strong

@@ -3,14 +3,18 @@ $dimensions: 16 24 32 48 64 96 128 !default
 .image
   display: block
   position: relative
+
   img
     display: block
     height: auto
     width: 100%
+
     &.rounded
       border-radius: $radius-rounded
+
   &.fullwidth
     width: 100%
+
   // Ratio
   &.square,
   &.1by1,
@@ -31,39 +35,56 @@ $dimensions: 16 24 32 48 64 96 128 !default
     img,
     .has-ratio
       @extend %overlay
+
       height: 100%
       width: 100%
+
   &.square,
   &.1by1
     padding-top: 100%
+
   &.5by4
     padding-top: 80%
+
   &.4by3
     padding-top: 75%
+
   &.3by2
     padding-top: 66.6666%
+
   &.5by3
     padding-top: 60%
+
   &.16by9
     padding-top: 56.25%
+
   &.2by1
     padding-top: 50%
+
   &.3by1
     padding-top: 33.3333%
+
   &.4by5
     padding-top: 125%
+
   &.3by4
     padding-top: 133.3333%
+
   &.2by3
     padding-top: 150%
+
   &.3by5
     padding-top: 166.6666%
+
   &.9by16
     padding-top: 177.7777%
+
   &.1by2
     padding-top: 200%
+
   &.1by3
     padding-top: 300%
+
   // Sizes
   @each $dimension in $dimensions
     &.#{$dimension}x#{$dimension}

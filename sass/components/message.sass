@@ -21,21 +21,28 @@ $message-colors: $colors !default
 
 .msg
   @extend %block
+
   background-color: $message-background-color
   border-radius: $message-radius
   font-size: $size-normal
+
   strong
     color: currentColor
+
   a:not(.button):not(.tag):not(.dropdown-item)
     color: currentColor
     text-decoration: underline
+
   // Sizes
   &.is-small
     font-size: $size-small
+
   &.is-medium
     font-size: $size-medium
+
   &.is-large
     font-size: $size-large
+
   // Colors
   @each $name, $components in $message-colors
     $color: nth($components, 1)
@@ -45,6 +52,7 @@ $message-colors: $colors !default
 
     @if length($components) >= 3
       $color-light: nth($components, 3)
+
       @if length($components) >= 4
         $color-dark: nth($components, 4)
       @else
@@ -53,14 +61,16 @@ $message-colors: $colors !default
         $desaturate-percentage: $color-luminance * 30%
         $color-dark: desaturate(darken($color, $darken-percentage), $desaturate-percentage)
     @else
-      $color-lightning: max((100% - lightness($color)) - 2%, 0%)
+      $color-lightning: max(100% - lightness($color) - 2%, 0%)
       $color-light: lighten($color, $color-lightning)
 
     &.is-#{$name}
       background-color: $color-light
+
       .msg-hdr
         background-color: $color
         color: $color-invert
+
       .msg-body
         border-color: $color
         color: $color-dark
@@ -76,10 +86,12 @@ $message-colors: $colors !default
   line-height: 1.25
   padding: $message-header-padding
   position: relative
+
   .delete
     flex-grow: 0
     flex-shrink: 0
     margin-left: 0.75em
+
   & + .msg-body
     border-width: $message-header-body-border-width
     border-top-left-radius: 0
@@ -92,8 +104,10 @@ $message-colors: $colors !default
   border-width: $message-body-border-width
   color: $message-body-color
   padding: $message-body-padding
+
   code,
   pre
     background-color: $message-body-pre-background-color
+
   pre code
     background-color: $message-body-pre-code-background-color

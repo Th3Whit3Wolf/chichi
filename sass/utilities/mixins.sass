@@ -1,4 +1,4 @@
-@import "initial-variables"
+@import initial-variables
 
 =clearfix
   &::after
@@ -8,6 +8,7 @@
 
 =c($width, $height: 0)
   position: absolute
+
   @if $height != 0
     left: calc(50% - (#{$width} / 2))
     top: calc(50% - (#{$height} / 2))
@@ -30,6 +31,7 @@
   height: $dimensions
   position: relative
   width: $dimensions
+
   span
     background-color: currentColor
     display: block
@@ -41,21 +43,28 @@
     transition-property: background-color, opacity, transform
     transition-timing-function: $easing
     width: 16px
+
     &:nth-child(1)
       top: calc(50% - 6px)
+
     &:nth-child(2)
       top: calc(50% - 1px)
+
     &:nth-child(3)
       top: calc(50% + 4px)
+
   &:hover
     background-color: bulmaRgba(black, 0.05)
+
   // Modifers
   &.is-active
     span
       &:nth-child(1)
         transform: translateY(5px) rotate(45deg)
+
       &:nth-child(2)
         opacity: 0
+
       &:nth-child(3)
         transform: translateY(-5px) rotate(-45deg)
 
@@ -63,7 +72,8 @@
   -webkit-overflow-scrolling: touch
 
 =placeholder
-  $placeholders: ':-moz' ':-webkit-input' '-moz' '-ms-input'
+  $placeholders: ":-moz" ":-webkit-input" "-moz" "-ms-input"
+
   @each $placeholder in $placeholders
     &:#{$placeholder}-placeholder
       @content
@@ -147,6 +157,7 @@
   @if $qhd-enabled
     @media screen and (min-width: $qhd)
       @content
+
 // Placeholders
 
 =unselectable
@@ -187,6 +198,7 @@
 
 =delete
   @extend %unselectable
+
   -moz-appearance: none
   -webkit-appearance: none
   background-color: bulmaRgba($scheme-invert, 0.2)
@@ -207,6 +219,7 @@
   position: relative
   vertical-align: top
   width: 20px
+
   &::before,
   &::after
     background-color: $scheme-main
@@ -217,17 +230,22 @@
     top: 50%
     transform: translateX(-50%) translateY(-50%) rotate(45deg)
     transform-origin: center center
+
   &::before
     height: 2px
     width: 50%
+
   &::after
     height: 50%
     width: 2px
+
   &:hover,
   &:focus
     background-color: bulmaRgba($scheme-invert, 0.3)
+
   &:active
     background-color: bulmaRgba($scheme-invert, 0.4)
+
   // Sizes
   &.is-small
     height: 16px
@@ -236,6 +254,7 @@
     min-height: 16px
     min-width: 16px
     width: 16px
+
   &.is-medium
     height: 24px
     max-height: 24px
@@ -243,6 +262,7 @@
     min-height: 24px
     min-width: 24px
     width: 24px
+
   &.is-large
     height: 32px
     max-height: 32px

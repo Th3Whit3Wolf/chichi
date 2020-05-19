@@ -27,12 +27,14 @@ $control-padding-horizontal: calc(0.75em - #{$control-border-width}) !default
   padding-top: $control-padding-vertical
   position: relative
   vertical-align: top
+
   // States
   &:focus,
   &.focused,
   &:active,
   &.on
     outline: none
+
   &[disabled],
   fieldset[disabled] &
     cursor: not-allowed
@@ -44,7 +46,9 @@ $control-padding-horizontal: calc(0.75em - #{$control-border-width}) !default
 =control-sm
   border-radius: $control-radius-small
   font-size: $size-small
+
 =control-md
   font-size: $size-medium
+
 =control-lg
   font-size: $size-large

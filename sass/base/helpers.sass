@@ -21,40 +21,49 @@
 
 // Typography
 
-=typography-size($target:'')
+=typography-size($target: "")
   @each $size in $sizes
     $i: index($sizes, $size)
-    .is-size-#{$i}#{if($target == '', '', '-' + $target)}
+
+    .is-size-#{$i}#{if($target == "", "", "-" + $target)}
       font-size: $size !important
 
-+typography-size()
++typography-size
 
 +mobile
-  +typography-size('mobile')
+  +typography-size("mobile")
+
 
 +tablet
-  +typography-size('tablet')
+  +typography-size("tablet")
+
 
 +touch
-  +typography-size('touch')
+  +typography-size("touch")
+
 
 +desktop
-  +typography-size('desktop')
+  +typography-size("desktop")
+
 
 +widescreen
-  +typography-size('widescreen')
+  +typography-size("widescreen")
+
 
 +fullhd
-  +typography-size('fullhd')
+  +typography-size("fullhd")
+
 
 +realhd
-  +typography-size('realhd')
+  +typography-size("realhd")
+
 
 +qhd
-  +typography-size('qhd')
+  +typography-size("qhd")
+
 
 // c - centered, j - justified, l - left, r - right
-$alignments: ('c': 'center', 'j': 'justify', 'l': 'left', 'r': 'right')
+$alignments: ("c": "center", "j": "justify", "l": "left", "r": "right")
 
 @each $alignment, $text-align in $alignments
   .text-#{$alignment}
@@ -64,33 +73,53 @@ $alignments: ('c': 'center', 'j': 'justify', 'l': 'left', 'r': 'right')
   +mobile
     .text-#{$alignment}-mobile
       text-align: #{$text-align} !important
+
+
   +tablet
     .text-#{$alignment}-tablet
       text-align: #{$text-align} !important
+
+
   +tablet-only
     .text-#{$alignment}-tablet-only
       text-align: #{$text-align} !important
+
+
   +touch
     .text-#{$alignment}-touch
       text-align: #{$text-align} !important
+
+
   +desktop
     .text-#{$alignment}-desktop
       text-align: #{$text-align} !important
+
+
   +desktop-only
     .text-#{$alignment}-desktop-only
       text-align: #{$text-align} !important
+
+
   +widescreen
     .text-#{$alignment}-widescreen
       text-align: #{$text-align} !important
+
+
   +widescreen-only
     .text-#{$alignment}-widescreen-only
       text-align: #{$text-align} !important
+
+
   +fullhd
     .text-#{$alignment}-fullhd
       text-align: #{$text-align} !important
+
+
   +realhd
     .text-#{$alignment}-realhd
       text-align: #{$text-align} !important
+
+
   +qhd
     .text-#{$alignment}-qhd
       text-align: #{$text-align} !important
@@ -109,29 +138,37 @@ $alignments: ('c': 'center', 'j': 'justify', 'l': 'left', 'r': 'right')
 
 @each $name, $pair in $colors
   $color: nth($pair, 1)
+
   .text-#{$name}
     color: $color !important
+
   a.text-#{$name}
     &:hover,
     &:focus
       color: bulmaDarken($color, 10%) !important
+
   .has-background-#{$name}
     background-color: $color !important
 
 @each $name, $shade in $shades
   .text-#{$name}
     color: $shade !important
+
   .has-background-#{$name}
     background-color: $shade !important
 
 .text-weight-light
   font-weight: $weight-light !important
+
 .text-weight-normal
   font-weight: $weight-normal !important
+
 .text-weight-medium
   font-weight: $weight-medium !important
+
 .text-weight-semibold
   font-weight: $weight-semibold !important
+
 .text-weight-bold
   font-weight: $weight-bold !important
 
@@ -152,41 +189,62 @@ $alignments: ('c': 'center', 'j': 'justify', 'l': 'left', 'r': 'right')
 
 // Visibility
 
-$displays: 'block' 'flex' 'inline' 'inline-block' 'inline-flex'
+$displays: "block" "flex" "inline" "inline-block" "inline-flex"
 
 @each $display in $displays
   .#{$display}
     display: #{$display} !important
+
   +mobile
     .#{$display}-mobile
       display: #{$display} !important
+
+
   +tablet
     .#{$display}-tablet
       display: #{$display} !important
+
+
   +tablet-only
     .#{$display}-tablet-only
       display: #{$display} !important
+
+
   +touch
     .#{$display}-touch
       display: #{$display} !important
+
+
   +desktop
     .#{$display}-desktop
       display: #{$display} !important
+
+
   +desktop-only
     .#{$display}-desktop-only
       display: #{$display} !important
+
+
   +widescreen
     .#{$display}-widescreen
       display: #{$display} !important
+
+
   +widescreen-only
     .#{$display}-widescreen-only
       display: #{$display} !important
+
+
   +fullhd
     .#{$display}-fullhd
       display: #{$display} !important
+
+
   +realhd
     .#{$display}-realhd
       display: #{$display} !important
+
+
   +qhd
     .#{$display}-qhd
       display: #{$display} !important
@@ -208,45 +266,56 @@ $displays: 'block' 'flex' 'inline' 'inline-block' 'inline-flex'
   .hidden-mobile
     display: none !important
 
+
 +tablet
   .hidden-tablet
     display: none !important
+
 
 +tablet-only
   .hidden-tablet-only
     display: none !important
 
+
 +touch
   .hidden-touch
     display: none !important
+
 
 +desktop
   .hidden-desktop
     display: none !important
 
+
 +desktop-only
   .hidden-desktop-only
     display: none !important
+
 
 +widescreen
   .hidden-widescreen
     display: none !important
 
+
 +widescreen-only
   .hidden-widescreen-only
     display: none !important
+
 
 +fullhd
   .hidden-fullhd
     display: none !important
 
+
 +realhd
   .hidden-realhd
     display: none !important
 
+
 +qhd
   .hidden-qhd
     display: none !important
+
 
 .invisible
   visibility: hidden !important
@@ -255,45 +324,56 @@ $displays: 'block' 'flex' 'inline' 'inline-block' 'inline-flex'
   .invisible-mobile
     visibility: hidden !important
 
+
 +tablet
   .invisible-tablet
     visibility: hidden !important
+
 
 +tablet-only
   .invisible-tablet-only
     visibility: hidden !important
 
+
 +touch
   .invisible-touch
     visibility: hidden !important
+
 
 +desktop
   .invisible-desktop
     visibility: hidden !important
 
+
 +desktop-only
   .invisible-desktop-only
     visibility: hidden !important
+
 
 +widescreen
   .invisible-widescreen
     visibility: hidden !important
 
+
 +widescreen-only
   .invisible-widescreen-only
     visibility: hidden !important
+
 
 +fullhd
   .invisible-fullhd
     visibility: hidden !important
 
+
 +realhd
   .invisible-realhd
     visibility: hidden !important
 
+
 +qhd
   .invisible-qhd
     visibility: hidden !important
+
 
 // Other
 

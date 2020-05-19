@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @keyframes spinAround {
   from {
     transform: rotate(0deg); }
@@ -3760,7 +3761,7 @@ a.tag:hover {
       pointer-events: none; }
     .breadcrumb li + li::before {
       color: #b5b5b5;
-      content: "\0002f"; }
+      content: "/"; }
   .breadcrumb ul,
   .breadcrumb ol {
     align-items: flex-start;
@@ -3784,13 +3785,13 @@ a.tag:hover {
   .breadcrumb.lg {
     font-size: 1.5rem; }
   .breadcrumb.arrow-sep li + li::before {
-    content: "\02192"; }
+    content: "→"; }
   .breadcrumb.bullet-sep li + li::before {
-    content: "\02022"; }
+    content: "•"; }
   .breadcrumb.dot-sep li + li::before {
-    content: "\000b7"; }
+    content: "·"; }
   .breadcrumb.succeeds-sep li + li::before {
-    content: "\0227B"; }
+    content: "≻"; }
 
 .card {
   background-color: white;
@@ -5040,10 +5041,10 @@ a.nb-item,
     display: block; }
   .nb > .container .nb-brand,
   .container > .nb .nb-brand {
-    margin-left: -.75rem; }
+    margin-left: -0.75rem; }
   .nb > .container .nb-menu,
   .container > .nb .nb-menu {
-    margin-right: -.75rem; }
+    margin-right: -0.75rem; }
   .nb.fixed-bottom-desktop, .nb.fixed-top-desktop {
     left: 0;
     position: fixed;

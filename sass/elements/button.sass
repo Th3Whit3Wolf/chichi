@@ -37,23 +37,30 @@ $button-static-border-color: $border !default
 =btn-sm
   border-radius: $radius-small
   font-size: $size-small
+
 =btn-normal
   font-size: $size-normal
+
 =btn-md
   font-size: $size-medium
+
 =btn-lg
   font-size: $size-large
 
 .btn
   @extend %control
+
   @extend %unselectable
+
   background-color: $button-background-color
   border-color: $button-border-color
   border-width: $button-border-width
   color: $button-color
   cursor: pointer
+
   @if $button-family
     font-family: $button-family
+
   justify-content: center
   padding-bottom: $button-padding-vertical
   padding-left: $button-padding-horizontal
@@ -61,8 +68,10 @@ $button-static-border-color: $border !default
   padding-top: $button-padding-vertical
   text-align: center
   white-space: nowrap
+
   strong
     color: inherit
+
   .icon
     &,
     &.sm,
@@ -70,98 +79,122 @@ $button-static-border-color: $border !default
     &.lg
       height: 1.5em
       width: 1.5em
+
     &:first-child:not(:last-child)
       margin-left: calc(#{-1 / 2 * $button-padding-horizontal} - #{$button-border-width})
       margin-right: $button-padding-horizontal / 4
+
     &:last-child:not(:first-child)
       margin-left: $button-padding-horizontal / 4
       margin-right: calc(#{-1 / 2 * $button-padding-horizontal} - #{$button-border-width})
+
     &:first-child:last-child
       margin-left: calc(#{-1 / 2 * $button-padding-horizontal} - #{$button-border-width})
       margin-right: calc(#{-1 / 2 * $button-padding-horizontal} - #{$button-border-width})
+
   // States
   &:hover,
   &.hovered
     border-color: $button-hover-border-color
     color: $button-hover-color
+
   &:focus,
   &.focused
     border-color: $button-focus-border-color
     color: $button-focus-color
+
     &:not(:active)
       box-shadow: $button-focus-box-shadow-size $button-focus-box-shadow-color
+
   &:active,
   &.on
     border-color: $button-active-border-color
     color: $button-active-color
+
   // Colors
   &.text
     background-color: transparent
     border-color: transparent
     color: $button-text-color
     text-decoration: $button-text-decoration
+
     &:hover,
     &.hovered,
     &:focus,
     &.focused
       background-color: $button-text-hover-background-color
       color: $button-text-hover-color
+
     &:active,
     &.on
       background-color: bulmaDarken($button-text-hover-background-color, 5%)
       color: $button-text-hover-color
+
     &[disabled],
     fieldset[disabled] &
       background-color: transparent
       border-color: transparent
       box-shadow: none
+
   @each $name, $pair in $colors
     $color: nth($pair, 1)
     $color-invert: nth($pair, 2)
+
     &.#{$name}
       background-color: $color
       border-color: transparent
       color: $color-invert
+
       &:hover,
       &.hovered
         background-color: bulmaDarken($color, 2.5%)
         border-color: transparent
         color: $color-invert
+
       &:focus,
       &.focused
         border-color: transparent
         color: $color-invert
+
         &:not(:active)
           box-shadow: $button-focus-box-shadow-size bulmaRgba($color, 0.25)
+
       &:active,
       &.on
         background-color: bulmaDarken($color, 5%)
         border-color: transparent
         color: $color-invert
+
       &[disabled],
       fieldset[disabled] &
         background-color: $color
         border-color: transparent
         box-shadow: none
+
       &.inverted
         background-color: $color-invert
         color: $color
+
         &:hover,
         &.hovered
           background-color: bulmaDarken($color-invert, 5%)
+
         &[disabled],
         fieldset[disabled] &
           background-color: $color-invert
           border-color: transparent
           box-shadow: none
           color: $color
+
       &.loading
         &::after
           border-color: transparent transparent $color-invert $color-invert !important
+
       &.outlined
         background-color: transparent
         border-color: $color
         color: $color
+
         &:hover,
         &.hovered,
         &:focus,
@@ -169,31 +202,37 @@ $button-static-border-color: $border !default
           background-color: $color
           border-color: $color
           color: $color-invert
+
         &.loading
           &::after
             border-color: transparent transparent $color $color !important
+
           &:hover,
           &.hovered,
           &:focus,
           &.focused
             &::after
               border-color: transparent transparent $color-invert $color-invert !important
+
         &[disabled],
         fieldset[disabled] &
           background-color: transparent
           border-color: $color
           box-shadow: none
           color: $color
+
       &.inverted.outlined
         background-color: transparent
         border-color: $color-invert
         color: $color-invert
+
         &:hover,
         &.hovered,
         &:focus,
         &.focused
           background-color: $color-invert
           color: $color
+
         &.loading
           &:hover,
           &.hovered,
@@ -201,38 +240,48 @@ $button-static-border-color: $border !default
           &.focused
             &::after
               border-color: transparent transparent $color $color !important
+
         &[disabled],
         fieldset[disabled] &
           background-color: transparent
           border-color: $color-invert
           box-shadow: none
           color: $color-invert
+
       // If light and dark colors are provided
       @if length($pair) >= 4
         $color-light: nth($pair, 3)
         $color-dark: nth($pair, 4)
+
         &.light
           background-color: $color-light
           color: $color-dark
+
           &:hover,
           &.hovered
             background-color: bulmaDarken($color-light, 2.5%)
             border-color: transparent
             color: $color-dark
+
           &:active,
           &.on
             background-color: bulmaDarken($color-light, 5%)
             border-color: transparent
             color: $color-dark
+
   // Sizes
   &.sm
     +btn-sm
+
   &.normal
     +btn-normal
+
   &.md
     +btn-md
+
   &.lg
     +btn-lg
+
   // Modifiers
   &[disabled],
   fieldset[disabled] &
@@ -240,22 +289,29 @@ $button-static-border-color: $border !default
     border-color: $button-disabled-border-color
     box-shadow: $button-disabled-shadow
     opacity: $button-disabled-opacity
+
   &.fullwidth
     display: flex
     width: 100%
+
   &.loading
     color: transparent !important
     pointer-events: none
+
     &::after
       @extend %loader
+
       +c(1em)
+
       position: absolute !important
+
   &.static
     background-color: $button-static-background-color
     border-color: $button-static-border-color
     color: $button-static-color
     box-shadow: none
     pointer-events: none
+
   &.rounded
     border-radius: $radius-rounded
     padding-left: calc(#{$button-padding-horizontal} + 0.25em)
@@ -266,57 +322,75 @@ $button-static-border-color: $border !default
   display: flex
   flex-wrap: wrap
   justify-content: flex-start
+
   .btn
     margin-bottom: 0.5rem
+
     &:not(:last-child):not(.fullwidth)
       margin-right: 0.5rem
+
   &:last-child
     margin-bottom: -0.5rem
+
   &:not(:last-child)
     margin-bottom: 1rem
+
   // Sizes
   &.sm
     .btn:not(.normal):not(.md):not(.lg)
       +btn-sm
+
   &.md
     .btn:not(.sm):not(.normal):not(.lg)
       +btn-md
+
   &.lg
     .btn:not(.sm):not(.normal):not(.md)
       +btn-lg
+
   &.addons
     .btn
       &:not(:first-child)
         border-bottom-left-radius: 0
         border-top-left-radius: 0
+
       &:not(:last-child)
         border-bottom-right-radius: 0
         border-top-right-radius: 0
         margin-right: -1px
+
       &:last-child
         margin-right: 0
+
       &:hover,
       &.hovered
         z-index: 2
+
       &:focus,
       &.focused,
       &:active,
       &.on,
       &.selected
         z-index: 3
+
         &:hover
           z-index: 4
+
       &.expanded
         flex-grow: 1
         flex-shrink: 1
+
   &.centered
     justify-content: center
+
     &:not(.addons)
       .btn:not(.fullwidth)
         margin-left: 0.25rem
         margin-right: 0.25rem
+
   &.right
     justify-content: flex-end
+
     &:not(.addons)
       .btn:not(.fullwidth)
         margin-left: 0.25rem

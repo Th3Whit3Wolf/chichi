@@ -21,14 +21,17 @@ $dropdown-divider-background-color: $border-light !default
   display: inline-flex
   position: relative
   vertical-align: top
+
   &.on,
   &.hoverable:hover
     .dropd-menu
       display: block
+
   &.r
     .dropd-menu
       left: auto
       right: 0
+
   &.up
     .dropd-menu
       bottom: 100%
@@ -66,9 +69,11 @@ button.dropd-item
   text-align: left
   white-space: nowrap
   width: 100%
+
   &:hover
     background-color: $dropdown-item-hover-background-color
     color: $dropdown-item-hover-color
+
   &.is-active
     background-color: $dropdown-item-active-background-color
     color: $dropdown-item-active-color

@@ -31,21 +31,27 @@ $pagination-shadow-inset: inset 0 1px 2px rgba($scheme-invert, 0.2)
 
 .pg
   @extend %block
+
   font-size: $size-normal
   margin: $pagination-margin
+
   // Sizes
   &.sm
     font-size: $size-small
+
   &.md
     font-size: $size-medium
+
   &.lg
     font-size: $size-large
+
   &.rounded
     .pg-prev,
     .pg-next
       padding-left: 1em
       padding-right: 1em
       border-radius: $radius-rounded
+
     .pg-link
       border-radius: $radius-rounded
 
@@ -61,7 +67,9 @@ $pagination-shadow-inset: inset 0 1px 2px rgba($scheme-invert, 0.2)
 .pg-link,
 .pg-ellipsis
   @extend %control
+
   @extend %unselectable
+
   font-size: $pagination-item-font-size
   justify-content: center
   margin: $pagination-item-margin
@@ -75,13 +83,17 @@ $pagination-shadow-inset: inset 0 1px 2px rgba($scheme-invert, 0.2)
   border-color: $pagination-border-color
   color: $pagination-color
   min-width: $pagination-min-width
+
   &:hover
     border-color: $pagination-hover-border-color
     color: $pagination-hover-color
+
   &:focus
     border-color: $pagination-focus-border-color
+
   &:active
     box-shadow: $pagination-shadow-inset
+
   &[disabled]
     background-color: $pagination-disabled-background-color
     border-color: $pagination-disabled-border-color
@@ -111,14 +123,17 @@ $pagination-shadow-inset: inset 0 1px 2px rgba($scheme-invert, 0.2)
 +mobile
   .pg
     flex-wrap: wrap
+
   .pg-prev,
   .pg-next
     flex-grow: 1
     flex-shrink: 1
+
   .pg-ls
     li
       flex-grow: 1
       flex-shrink: 1
+
 
 +tablet
   .pg-ls
@@ -126,25 +141,34 @@ $pagination-shadow-inset: inset 0 1px 2px rgba($scheme-invert, 0.2)
     flex-shrink: 1
     justify-content: flex-start
     order: 1
+
   .pg-prev
     order: 2
+
   .pg-next
     order: 3
+
   .pg
     justify-content: space-between
+
     &.centered
       .pg-prev
         order: 1
+
       .pg-ls
         justify-content: center
         order: 2
+
       .pg-next
         order: 3
+
     &.r
       .pg-prev
         order: 1
+
       .pg-next
         order: 2
+
       .pg-ls
         justify-content: flex-end
         order: 3

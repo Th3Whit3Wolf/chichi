@@ -4,23 +4,30 @@ $media-border-color: bulmaRgba($border, 0.5) !default
   align-items: flex-start
   display: flex
   text-align: left
+
   .cnt:not(:last-child)
     margin-bottom: 0.75rem
+
   .media
     border-top: 1px solid $media-border-color
     display: flex
     padding-top: 0.75rem
+
     .cnt:not(:last-child),
     .control:not(:last-child)
       margin-bottom: 0.5rem
+
     .media
       padding-top: 0.5rem
+
       & + .media
         margin-top: 0.5rem
+
   & + .media
     border-top: 1px solid $media-border-color
     margin-top: 1rem
     padding-top: 1rem
+
   // Sizes
   &.is-large
     & + .media
